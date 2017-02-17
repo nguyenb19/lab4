@@ -150,6 +150,8 @@ public class TextModActivity extends AppCompatActivity {
         }
     }
 
+
+
     private class lowerButtonListener implements View.OnClickListener{
         @Override
         public void onClick(View v) {
