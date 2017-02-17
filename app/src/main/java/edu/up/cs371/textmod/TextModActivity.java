@@ -17,6 +17,7 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -76,7 +77,8 @@ public class TextModActivity extends ActionBarActivity {
 
         // load the images from the resources
 
-
+        Button clear = (Button)findViewById(R.id.button);
+        clear.setOnClickListener(new clearButt());
 
         editText = (TextView)findViewById(R.id.editText);
         Button copyButton = (Button) findViewById(R.id.button2);
@@ -99,6 +101,12 @@ public class TextModActivity extends ActionBarActivity {
 
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
+        
+        Button upper = (Button)findViewById(R.id.button6);
+        upper.setOnClickListener(new upperButt());
+        
+        Button lower = (Button)findViewById(R.id.button6);
+        lower.setOnClickListener(new lowerButt());
 
     }
 
@@ -153,6 +161,28 @@ public class TextModActivity extends ActionBarActivity {
         @Override
         public void onNothingSelected(AdapterView<?> parentView) {
             // your code here
+        }
+    }
+    public class clearButt implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v){
+            EditText words = (EditText)findViewById(R.id.editText);
+            words.setText("");
+        }
+    }
+    
+    public class upperButt implements View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            editText.setText(editText.getText().toString().toUpperCase());
+        }
+    }
+    
+    public class lowerButt implements View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            editText.setText(editText.getText().toString().toLowerCase());
         }
     }
 }
