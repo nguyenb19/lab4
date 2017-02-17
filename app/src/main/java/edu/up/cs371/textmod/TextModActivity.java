@@ -25,7 +25,6 @@ import java.util.ArrayList;
 
 public class TextModActivity extends AppCompatActivity {
     String text = null;
-    private TextView editText;
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
