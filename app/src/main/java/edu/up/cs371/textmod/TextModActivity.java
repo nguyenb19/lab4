@@ -40,7 +40,7 @@ public class TextModActivity extends ActionBarActivity {
         public void onClick(View v)
         {
             String Green = (String) editText.getText().toString();
-            String Blue =editText.getText().toString();
+
             String a = s.getSelectedItem().toString();
 
             editText.setText(Green+a);
