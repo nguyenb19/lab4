@@ -8,19 +8,24 @@ package edu.up.cs371.textmod;
 import android.content.res.TypedArray;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
+
 import java.util.ArrayList;
 
-public class TextModActivity extends ActionBarActivity {
+public class TextModActivity extends AppCompatActivity {
+    String text = null;
+    private TextView editText;
 
     // array-list that contains our images to display
     private ArrayList<Bitmap> images;
@@ -72,6 +77,14 @@ public class TextModActivity extends ActionBarActivity {
 
         // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
+
+        editText = (TextView) findViewById(R.id.editText);
+
+        Button uppercaseButton = (Button) findViewById(R.id.button6);
+        uppercaseButton.setOnClickListener(new upperButtonListener());
+
+        Button lowercaseButton = (Button) findViewById(R.id.button7);
+        lowercaseButton.setOnClickListener(new lowerButtonListener());
 
     }
 
@@ -126,6 +139,22 @@ public class TextModActivity extends ActionBarActivity {
         @Override
         public void onNothingSelected(AdapterView<?> parentView) {
             // your code here
+        }
+    }
+
+    private class upperButtonListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            text = editText.getText().toString();
+            editText.setText(text.toUpperCase());
+        }
+    }
+
+    private class lowerButtonListener implements View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            text = editText.getText().toString();
+            editText.setText(text.toLowerCase());
         }
     }
 }
