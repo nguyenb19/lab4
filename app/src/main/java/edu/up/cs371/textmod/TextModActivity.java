@@ -41,9 +41,10 @@ public class TextModActivity extends ActionBarActivity {
         public void onClick(View v)
         {
             String Green = (String) editText.getText().toString();
+            //get the selected opinion from the bar
 
             String a = s.getSelectedItem().toString();
-
+            //thay doi text
             editText.setText(Green+a);
         }
     }
