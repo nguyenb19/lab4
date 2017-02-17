@@ -9,6 +9,7 @@
         <item>@mipmap/kitten</item>
         <item>@mipmap/nuxoll</item>
         <item>@mipmap/vegdahl</item>
+        <item>@mipmap/cage</item>
         <item>@mipmap/bach_nguyen</item>
     </array>
 
@@ -16,6 +17,7 @@
         <item>Sleeping Kitten</item>
         <item>Dr. Andrew Nuxoll</item>
         <item>Dr. Steven Vegdahl</item>
+        <item>Javier Resop?</item>
         <item>Jake Nguyen</item>
     </string-array>
 
