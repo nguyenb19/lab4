@@ -33,6 +33,21 @@ public class TextModActivity extends AppCompatActivity {
     // instance variables containing widgets
     private ImageView imageView; // the view that shows the image
 
+    private TextView editText;
+    private Spinner s;
+
+
+    private class copyButtonListener implements View.OnClickListener
+    {
+        public void onClick(View v)
+        {
+            String Green = (String) editText.getText().toString();
+
+            String a = s.getSelectedItem().toString();
+
+            editText.setText(Green+a);
+        }
+    }
     /**
      * @see android.app.Activity#onCreate(android.os.Bundle)
      */
@@ -50,6 +65,8 @@ public class TextModActivity extends AppCompatActivity {
         //
         // get spinner object
         Spinner spinner = (Spinner)findViewById(R.id.spinner);
+        s = spinner;
+
         // get array of strings
         String[] spinnerNames = getResources().getStringArray(R.array.spinner_names);
         // create adapter with the strings
@@ -60,6 +77,12 @@ public class TextModActivity extends AppCompatActivity {
         spinner.setAdapter(adapter);
 
         // load the images from the resources
+
+
+
+        editText = (TextView)findViewById(R.id.editText);
+        Button copyButton = (Button) findViewById(R.id.button2);
+        copyButton.setOnClickListener(new copyButtonListener());
         //
         // create the arraylist to hold the images
         images = new ArrayList<Bitmap>();
@@ -73,6 +96,7 @@ public class TextModActivity extends AppCompatActivity {
             // load the image; add to arraylist
             Bitmap img = BitmapFactory.decodeResource(getResources(), id);
             images.add(img);
+
         }
 
         // define a listener for the spinner
