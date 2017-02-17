@@ -165,4 +165,18 @@ public class TextModActivity extends ActionBarActivity {
             words.setText("");
         }
     }
+    
+    public class upperButt implements View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            editText.setText(editText.getText().toString().toUpperCase());
+        }
+    }
+    
+    public class lowerButt implements View.OnClickListener{
+        @Override
+        public void onClick(View v){
+            editText.setText(editText.getText().toString().toLowerCase());
+        }
+    }
 }
