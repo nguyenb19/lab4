@@ -105,7 +105,7 @@ public class TextModActivity extends ActionBarActivity {
         Button upper = (Button)findViewById(R.id.button6);
         upper.setOnClickListener(new upperButt());
         
-        Button lower = (Button)findViewById(R.id.button6);
+        Button lower = (Button)findViewById(R.id.button7);
         lower.setOnClickListener(new lowerButt());
 
     }
