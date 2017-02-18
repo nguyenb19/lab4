@@ -100,7 +100,7 @@ public class TextModActivity extends ActionBarActivity {
 
         }
 
-        // define a listener for the spinne
+        // define a listener for the spinner
         spinner.setOnItemSelectedListener(new MySpinnerListener());
         
         Button upper = (Button)findViewById(R.id.button6);
