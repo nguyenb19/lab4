@@ -200,8 +200,6 @@ public class TextModActivity extends ActionBarActivity {
         }
     }
 
-
-
     private class ReverseButtonListener implements View.OnClickListener
     {
 
