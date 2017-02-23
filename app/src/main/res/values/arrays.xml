@@ -11,6 +11,7 @@
         <item>@mipmap/vegdahl</item>
         <item>@mipmap/cage</item>
         <item>@mipmap/bach_nguyen</item>
+        <item>@mipmap/chase</item>
     </array>
 
     <string-array name="spinner_names">
@@ -19,6 +20,7 @@
         <item>Dr. Steven Vegdahl</item>
         <item>Javier Resop?</item>
         <item>Jake Nguyen</item>
+        <item>Chase</item>
     </string-array>
 
 </resources>
