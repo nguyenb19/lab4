@@ -12,6 +12,7 @@
         <item>@mipmap/cage</item>
         <item>@mipmap/bach_nguyen</item>
         <item>@mipmap/chase</item>
+        <item>@mipmap/ryan</item>
     </array>
 
     <string-array name="spinner_names">
@@ -21,6 +22,7 @@
         <item>Javier Resop?</item>
         <item>Jake Nguyen</item>
         <item>Chase</item>
+        <item>Ryan Fredrickson</item>
     </string-array>
 
 </resources>
