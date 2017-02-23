@@ -112,6 +112,10 @@ public class TextModActivity extends ActionBarActivity {
         Button Reverse = (Button)findViewById(R.id.button4);
         Reverse.setOnClickListener(new ReverseButtonListener());
 
+        Button AltCase = (Button)findViewById(R.id.p7CDButton);
+        AltCase.setOnClickListener(new AltCaseButtonListener());
+
+
     }
 
     /**
@@ -205,6 +209,26 @@ public class TextModActivity extends ActionBarActivity {
             text = SBText.reverse().toString();
 
             ET.setText(text);
+        }
+    }
+
+    private class AltCaseButtonListener implements View.OnClickListener
+    {
+
+        @Override
+        public void onClick(View view)
+        {
+            EditText ET = (EditText)findViewById(R.id.editText);
+            CharSequence CS = ET.getText();
+            StringBuilder SB = new StringBuilder(CS);
+
+            for(int i = 0; i < SB.length(); i++)
+            {
+                if(i % 2 == 0)
+                    SB.setCharAt(i, Character.toUpperCase(SB.charAt(i)));
+            }
+
+            ET.setText(SB);
         }
     }
 
