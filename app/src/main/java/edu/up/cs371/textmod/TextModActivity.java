@@ -35,6 +35,7 @@ public class TextModActivity extends ActionBarActivity {
     private TextView editText;
     private Spinner s;
 
+
     private class copyButtonListener implements View.OnClickListener
     {
         public void onClick(View v)
