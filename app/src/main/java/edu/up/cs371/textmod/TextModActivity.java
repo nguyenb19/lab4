@@ -100,7 +100,7 @@ public class TextModActivity extends ActionBarActivity {
 
         }
 
-        // define a listener for the spinner
+        // define a listener for the spinne
         spinner.setOnItemSelectedListener(new MySpinnerListener());
         
         Button upper = (Button)findViewById(R.id.button6);
@@ -108,6 +108,9 @@ public class TextModActivity extends ActionBarActivity {
         
         Button lower = (Button)findViewById(R.id.button7);
         lower.setOnClickListener(new lowerButt());
+
+        Button Reverse = (Button)findViewById(R.id.button4);
+        Reverse.setOnClickListener(new ReverseButtonListener());
 
     }
 
@@ -182,8 +185,27 @@ public class TextModActivity extends ActionBarActivity {
     
     public class lowerButt implements View.OnClickListener{
         @Override
-        public void onClick(View v){
+        public void onClick(View v) {
             editText.setText(editText.getText().toString().toLowerCase());
         }
     }
+
+
+
+    private class ReverseButtonListener implements View.OnClickListener
+    {
+
+        @Override
+        public void onClick(View view) {
+            EditText ET = (EditText)findViewById(R.id.editText);
+
+            CharSequence CharText = ET.getText();
+            String text = CharText.toString();
+            StringBuilder SBText = new StringBuilder(text);
+            text = SBText.reverse().toString();
+
+            ET.setText(text);
+        }
+    }
+
 }
