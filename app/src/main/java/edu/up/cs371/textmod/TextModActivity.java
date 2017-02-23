@@ -112,6 +112,9 @@ public class TextModActivity extends ActionBarActivity {
         Button Reverse = (Button)findViewById(R.id.button4);
         Reverse.setOnClickListener(new ReverseButtonListener());
 
+
+        Button removeSpaces = (Button)findViewById(R.id.nospace);
+        removeSpaces.setOnClickListener(new noSpace());
     }
 
     /**
@@ -187,6 +190,13 @@ public class TextModActivity extends ActionBarActivity {
         @Override
         public void onClick(View v) {
             editText.setText(editText.getText().toString().toLowerCase());
+        }
+    }
+
+    public class noSpace implements  View.OnClickListener{
+        @Override
+        public void onClick(View v) {
+            editText.setText(editText.getText().toString().replace(" ", ""));
         }
     }
 
