@@ -201,14 +201,14 @@ public class TextModActivity extends ActionBarActivity {
 
         @Override
         public void onClick(View view) {
-            EditText ET = (EditText)findViewById(R.id.editText);
-
-            CharSequence CharText = ET.getText();
+            CharSequence CharText = editText.getText();
             String text = CharText.toString();
             StringBuilder SBText = new StringBuilder(text);
             text = SBText.reverse().toString();
 
-            ET.setText(text);
+            editText.setText(text);
+
+
         }
     }
 
