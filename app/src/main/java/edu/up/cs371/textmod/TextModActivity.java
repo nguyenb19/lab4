@@ -23,6 +23,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class TextModActivity extends ActionBarActivity {
 
@@ -80,6 +81,9 @@ public class TextModActivity extends ActionBarActivity {
 
         Button clear = (Button)findViewById(R.id.button);
         clear.setOnClickListener(new clearButt());
+
+        Button rando = (Button)findViewById(R.id.randoButton);
+        rando.setOnClickListener(new randoButt());
 
         editText = (TextView)findViewById(R.id.editText);
         Button copyButton = (Button) findViewById(R.id.button2);
@@ -205,6 +209,20 @@ public class TextModActivity extends ActionBarActivity {
             text = SBText.reverse().toString();
 
             ET.setText(text);
+        }
+    }
+
+    public class randoButt implements View.OnClickListener{
+
+        @Override
+        public void onClick(View v) {
+            Random r = new Random();
+            char letter = (char)(r.nextInt(26) + 'a');
+            EditText words = (EditText)findViewById(R.id.editText);
+            String old = words.getText().toString();
+            int rando = (int)(Math.random()*old.length() +1);
+            old = old.substring(0,rando) + letter + old.substring(rando);
+            words.setText(old);
         }
     }
 
