@@ -220,9 +220,12 @@ public class TextModActivity extends ActionBarActivity {
             char letter = (char)(r.nextInt(26) + 'a');
             EditText words = (EditText)findViewById(R.id.editText);
             String old = words.getText().toString();
-            int rando = (int)(Math.random()*old.length() +1);
-            old = old.substring(0,rando) + letter + old.substring(rando);
-            words.setText(old);
+            if(old != null && !old.equals("")) {
+                int rando = (int) (Math.random() * old.length() + 1);
+
+                old = old.substring(0, rando) + letter + old.substring(rando);
+                words.setText(old);
+            }
         }
     }
 
