@@ -112,6 +112,10 @@ public class TextModActivity extends ActionBarActivity {
         Button Reverse = (Button)findViewById(R.id.button4);
         Reverse.setOnClickListener(new ReverseButtonListener());
 
+        Button RemovePun = (Button)findViewById(R.id.buttonremovePunctuation);
+        RemovePun.setOnClickListener(new removePunctuation());
+
+
     }
 
     /**
@@ -188,6 +192,20 @@ public class TextModActivity extends ActionBarActivity {
         public void onClick(View v) {
             editText.setText(editText.getText().toString().toLowerCase());
         }
+    }
+
+    private class removePunctuation implements View.OnClickListener
+    {
+        @Override
+        public void onClick (View view)
+        {
+            CharSequence textline = editText.getText();
+            String S = textline.toString();
+            S = S.replaceAll("\\W", " " );
+            editText.setText(S);
+        }
+
+
     }
 
 
